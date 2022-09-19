@@ -1,0 +1,206 @@
+
+{% load static %}
+</head>
+
+<!DOCTYPE html>
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href=" {% static '/carsAppTest/ListeExpert.css' %} ">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" >
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+
+</head>
+<body  style=" background-image: url('{% static '/carsAppTest/bgcar5.jpg' %}'); background-size: 1550px 1150px" >
+    <h3 style="font-size: 50px ; margin-left: 30px; color: whitesmoke"><svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="currentColor" class="bi bi-tools" viewBox="0 0 16 16">
+      <path d="M1 0 0 1l2.2 3.081a1 1 0 0 0 .815.419h.07a1 1 0 0 1 .708.293l2.675 2.675-2.617 2.654A3.003 3.003 0 0 0 0 13a3 3 0 1 0 5.878-.851l2.654-2.617.968.968-.305.914a1 1 0 0 0 .242 1.023l3.27 3.27a.997.997 0 0 0 1.414 0l1.586-1.586a.997.997 0 0 0 0-1.414l-3.27-3.27a1 1 0 0 0-1.023-.242L10.5 9.5l-.96-.96 2.68-2.643A3.005 3.005 0 0 0 16 3c0-.269-.035-.53-.102-.777l-2.14 2.141L12 4l-.364-1.757L13.777.102a3 3 0 0 0-3.675 3.68L7.462 6.46 4.793 3.793a1 1 0 0 1-.293-.707v-.071a1 1 0 0 0-.419-.814L1 0Zm9.646 10.646a.5.5 0 0 1 .708 0l2.914 2.915a.5.5 0 0 1-.707.707l-2.915-2.914a.5.5 0 0 1 0-.708ZM3 11l.471.242.529.026.287.445.445.287.026.529L5 13l-.242.471-.026.529-.445.287-.287.445-.529.026L3 15l-.471-.242L2 14.732l-.287-.445L1.268 14l-.026-.529L1 13l.242-.471.026-.529.445-.287.287-.445.529-.026L3 11Z"/>
+    </svg>Experts</h3>
+<!--
+<br> 
+<form action="" method="post">
+  
+    {% csrf_token %}
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+          choisir par région
+        </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+            {%for i in expert_list%}
+            <button class="dropdown-item" type="submit"  value={{i.region}} name="region">{{i.region}}</button>
+            {%endfor%}
+        </div>
+</form>
+ <br>  <br> <br> <br> <br> <br> <br> <br> <br> <br>-->
+ 
+<hr style="margin: 45px; color: white;">
+ <form action="" method="post" style="position: center ">
+    {% csrf_token %}
+    <div class="dropdown" >
+        <button class="btn btn-outline-light btn-lg dropdown-toggle" style="margin-left:620px;margin-top: -15px;" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" name="choisir_par_region">
+         Select region
+        </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+            <button class="dropdown-item" type="submit"  value="Ariana" name="region">Ariana</button>
+            <button class="dropdown-item" type="submit"  value="Tunis" name="region">Tunis</button>
+            <button class="dropdown-item" type="submit"  value="Ben Arous" name="region">Ben Arous</button>
+            <button class="dropdown-item" type="submit"  value="Manouba" name="region">Manouba</button>
+            <button class="dropdown-item" type="submit"  value="Beja" name="region">Beja</button>
+            <button class="dropdown-item" type="submit"  value="Bizerte" name="region">Bizerte</button>
+            <button class="dropdown-item" type="submit"  value="Gabes" name="region">Gabes</button>
+            <button class="dropdown-item" type="submit"  value="Jendouba" name="region">Jendouba</button>
+            <button class="dropdown-item" type="submit"  value="Kairouan" name="region">Kairouan</button>
+            <button class="dropdown-item" type="submit"  value="Kasserine" name="region">Kasserine</button>
+            <button class="dropdown-item" type="submit"  value="Kebili" name="region">Kebili</button>
+            <button class="dropdown-item" type="submit"  value="Kef" name="region">Kef</button>
+            <button class="dropdown-item" type="submit"  value="Mahdia" name="region">Mahdia</button>
+            <button class="dropdown-item" type="submit"  value="Medenine" name="region">Medenine</button>
+            <button class="dropdown-item" type="submit"  value="Monastir" name="region">Monastir</button>
+            <button class="dropdown-item" type="submit"  value="Nabeul" name="region">Nabeul</button>
+            <button class="dropdown-item" type="submit"  value="Sfax" name="region">Sfax</button>
+            <button class="dropdown-item" type="submit"  value="Sidi Bouzid" name="region">Sidi Bouzid</button>
+            <button class="dropdown-item" type="submit"  value="Siliana" name="region">Siliana</button>
+            <button class="dropdown-item" type="submit"  value="Sousse" name="region">Sousse</button>
+            <button class="dropdown-item" type="submit"  value="Tataouine" name="region">Tataouine</button>
+            <button class="dropdown-item" type="submit"  value="Tozeur" name="region">Tozeur</button>
+            <button class="dropdown-item" type="submit"  value="Zaghouan" name="region">Zaghouan</button>
+        </div>
+</form>
+ <br>  <br> <br> <br> <br> <br> <br> <br> <br> <br>
+ 
+
+<!--{%for expert in expert_list%}
+ <p>{{expert.nom}}</p>
+ <p>{{expert.prenom}}</p>
+ 
+{% endfor %}
+
+{%for expert in expert_par_region%}
+ <p>{{expert.nom}}</p>
+ <p>{{expert.prenom}}</p>
+ <button class="btn btn-success" name="choisir" value={{expert.nom}}>choisir  </button>
+{% endfor %}-->
+<br>
+
+<!--<div class="container mt-5 mb-5">
+  
+  <div class="row g-2">
+    {%for expert in expert_list%}
+      <div class="col-md-3">
+
+          <div class="card p-2 py-3 text-center">
+
+              <div class="img mb-2">
+
+                  <img src="{{expert.photo.url}}" width="70" class="rounded-circle">
+                  
+              </div>
+
+              <h5 class="mb-0">{{expert.nom}} {{expert.prenom}}</h5>
+              <div class="mt-2">      	
+<i class="fa fa-envelope"><small>{{expert.adresse_mail}}</small></i>
+              </div>
+              <div class="mt-2">      	
+               
+<i class='fa fa-map-marker' style='color: blue'><small>{{expert.region}}</small></i>
+                              </div>
+                              <div class="mt-2">      	
+               
+                                <i class="fa fa-phone"><small>{{expert.numero_de_téléphone}}</small></i>
+                                                              </div>
+              
+                              <div class="ratings mt-2">
+
+                  
+              </div>
+
+              
+          </div>
+          
+      </div>
+
+
+{%endfor%}
+
+<!-- {%for expert in expert_par_region%}
+ <p>{{expert.nom}}</p>
+ <p>{{expert.prenom}}</p>
+ <button class="btn btn-success" name="choisir" value={{expert.nom}}>choisir  </button>
+{% endfor %}-->
+<br> 
+
+<div class="container mt-5 mb-5">
+  
+  <div class="row g-2">
+    {%for expert in expert_par_region%}
+      <div class="col-md-3">
+
+          <div class="card p-2 py-3 text-center">
+
+              <div class="img mb-2">
+
+                  <img src="{{expert.photo.url}}" width="70" class="rounded-circle">
+                  
+              </div>
+
+              <h5 class="mb-0">{{expert.nom}} {{expert.prenom}}</h5>
+              <div class="mt-2">      	
+<i class="fa fa-envelope"><small>{{expert.adresse_mail}}</small></i>
+              </div>
+              <div class="mt-2">      	
+               
+<i class='fa fa-map-marker' style='color: blue'><small>{{expert.region}}</small></i>
+                              </div>
+                              <div class="mt-2">      	
+               
+                                <i class="fa fa-phone"><small>{{expert.numero_de_téléphone}}</small></i>
+                                                              </div>
+              
+                              <div class="ratings mt-2">
+
+                  
+              </div>
+
+              <div class="mt-4 apointment">
+
+                  <button class="btn btn-success text-uppercase" name="choisir" value={{expert.user_id}}>choisir</button>
+                  
+              </div>
+
+          </div>
+          
+      </div>
+
+
+{%endfor%}
+
+
+
+
+
+
+    
+
+
+      
+
+
+
+      
+
+
+
+      
+
+
+
+
+      
+  </div>
+     
+
+ </div>
+
+</body>
+</html>

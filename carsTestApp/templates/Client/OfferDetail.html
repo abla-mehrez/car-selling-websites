@@ -1,0 +1,143 @@
+{%extends 'Client/Navbar.html'%}
+{%load widget_tweaks%}
+{%block content%}
+{% load static %}
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" type="text/css" href=" {% static '/carsAppTest/OfferDetail.css' %} ">
+
+</head>
+
+<body>
+  
+{% load crispy_forms_tags %} 
+
+<!--<img src="{% static 'carsAppTest/Ccoala1.jpg'%}"  alt="my image"/>-->
+<!--<h3>ici on trouve tous les détails d'une offre à savoir tous les commentaire </h3>
+
+<p>{{offreid.matricule}}</p>
+<h3>comments...</h3>
+{% if not offreid.comments.all %}
+NO COMMENTS YET ...<a href="#">add one </a>
+{%else%}
+  {%for comment in offreid.comments.all%}
+ <strong> {{comment.contenu}}-</strong>
+  {{comment.acheteur}}-
+  {{comment.cree_le}}
+ 
+  {%endfor%}
+{%endif%}
+{% if user.is_authenticated %}
+   <form method="POST">
+     {% csrf_token %} {{form|crispy}}
+   
+     <button type="submit" class="btn btn-primary"> post</button>
+{% endif %}
+  </form>-->
+ 
+<!-- Main Body -->
+<p style="font-size: 50px; font-weight: ; margin-left: 10px">{{offreid.marque}}</p>
+<div style=" margin-right: auto;
+margin-left: auto;
+
+box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
+
+border-radius: 5px;
+backdrop-filter: blur(14px);
+background-color: rgba(255, 255, 255, 0.2);
+padding: 35px;
+text-align: left ;">
+<div class="container" style="">
+    <img style="border: 2px solid rgba(156, 156, 156, 0.396); padding: 4px" src="{{offreid.image.url}}" alt="" />
+    <p class="title">check Report</p>
+    <div class="overlay"></div>
+    {%if offreid.bilan_id is not NULL%}
+    
+    <div class="button"><a href="{% url 'carsApp:bilan_detail' offreid.bilan.id %}"> Expert Report </a></div>
+    {%else%}
+     
+    <div class="button" style="font-size: 200%; color: white">  Expert report not found! </div>
+    {%endif%}
+</div>
+<hr style="margin: 30px;">
+<div  class="alert" >
+<p style="font-size: 30px; Color: white ; margin-left: 10px">Plate number:  {{offreid.matricule}}</p>
+<p style="font-size: 30px; Color: white ; margin-left: 10px">Color:{{offreid.couleur}}</p>
+<p style="font-size: 30px; Color: white ; margin-left: 10px"> Region: {{offreid.region}}</p>
+<p style="font-size: 30px; Color: white ; margin-left: 10px">Mileage:  {{offreid.kilometrage}}</p>
+<p style="font-size: 30px; Color: white ; margin-left: 10px">Transmission: {{offreid.transmission}}</p>
+<p style="font-size: 30px; Color: white ; margin-left: 10px">Fuel type:   {{offreid.carburant}}</p>
+<p style="font-size: 30px; Color: white ; margin-left: 10px">Year:  {{offreid.annee}}</p>
+<p style="font-size: 30px; Color: white ; margin-left: 10px">Seller's price: {{offreid.prix_propose}}</p>
+<p style="font-size: 30px; Color: white ; margin-left: 10px">Expert's price: {{offreid.prix_enchere}}</p>
+</div>
+<hr style="margin: 30px;">
+</div>
+<!--
+<div>
+    <p style="font-size: 50px; font-weight: ; margin-left: 10px">{{offreid.matricule}}</p>
+    <img style="border: 2px solid rgba(156, 156, 156, 0.396); text-align: center ; padding: 4px" src="{{offreid.image.url}}" width=720 height=420>  </img>
+    {%if offreid.bilan_id is not NULL%}
+    <a type='button' class='btn btn-primary btn-sm' style="width: 100px; height: 50px" href="{% url 'carsApp:bilan_detail' offreid.bilan.id %}">bilan</a>
+    {%else%}
+    <div class="alert alert-warning" role="alert">
+        pas de bilan pour cette offre
+    </div>
+  
+    {%endif%}
+</div> -->
+
+
+{% if not offreid.comments.all %}
+  <p style="color: white;">NO COMMENTS YET ... </p>
+{%else%}  
+<div>
+   <section >
+
+    <div class="container">
+        <h1>Comments</h1>
+        {%for comment in offreid.comments.all%}
+        <div class="row">
+            <div class="col">
+                <div class="comment mt-4 me-auto">
+                    <h4  style="text-align:left">{{comment.acheteur}}</h4>
+                    <span style="text-align:left">- {{comment.cree_le}}</span>
+                    <br>
+                    <p style="text-align:left">{{comment.contenu}}</p>
+                </div>
+        
+            </div>
+         {%endfor%}
+        </section>
+{%endif%}
+        
+{% if user.is_authenticated %}
+            
+ <div class="form-row">
+                
+    <form method="POST"   id="algin-form">
+        {% csrf_token %}
+        
+        <div class="form-group">
+                     
+            <h4>Leave a comment..</h4>
+            
+             {% render_field form.contenu rows="5 cols="30" name="msg  id=""msg class="form-control" %}        
+           
+              </div>
+                    <div class="form-group" style="text-align: right">
+                        <button type="submit" id="post"  class="btn" >Post Comment</button>
+                    
+                    </div>
+                </form>
+            </div>
+{%endif%}
+        </div>
+    </div>
+
+</div>
+{%endblock%}
+<br>
+<br>
+  </body>
+  

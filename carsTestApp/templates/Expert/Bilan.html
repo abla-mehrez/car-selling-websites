@@ -1,0 +1,324 @@
+{%extends 'Client/navbar.html'%} 
+{%block content%} 
+{%load static%} 
+
+<!DOCTYPE html>
+<head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <br>
+    <h1 style="background-color: white; margin-left: 580px; margin-right: 580px ;text-align: center ; font-family: 'fantasy'; color:rgb(44, 43, 43); font-weight: 900">Score: {{bilanid.note}}/100</h1>
+    <br>
+<section>
+    <div class="row">
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card">
+          <div class="card-body">
+            
+            <h5 class="mb-0">
+              <strong>Dashboard</strong>
+             
+            </h5>
+
+            <hr />
+
+            <h5 class="text-muted mb-0">{{bilanid.tableau_de_bord_alertes_temoins_allumes}}</h5>
+          </div>
+        </div>
+        <!-- Card -->
+      </div>
+
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card">
+          <div class="card-body">                   
+            <h5 class="mb-0">
+              <strong>Battery</strong>                      
+            </h5>
+
+            <hr />
+            <h5 class="text-muted mb-0">{{bilanid.batterie_cmd_electronique}}</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="mb-0">
+              <strong>Engine</strong>
+             
+            </h5>
+
+            <hr />
+            <h5 class="text-muted mb-0">{{bilanid.moteur_niveaux}}</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card">
+          <div class="card-body">
+
+            <h5 class="mb-0">
+              <strong>Fixations</strong>                      
+            </h5>
+
+            <hr />
+            <h5 class="text-muted mb-0">{{bilanid.fixation}}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card">
+          <div class="card-body">
+            
+            <h5 class="mb-0">
+              <strong>Gearbox/Clutch</strong>
+             
+            </h5>
+
+            <hr />
+
+            <h5 class="text-muted mb-0">{{bilanid.boite_vitesse_embrayage}}</h5>
+          </div>
+        </div>
+        <!-- Card -->
+      </div>
+
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card">
+          <div class="card-body">                   
+            <h5 class="mb-0">
+              <strong>Exhaust/Pollution</strong>                      
+            </h5>
+
+            <hr />
+            <h5 class="text-muted mb-0">{{bilanid.echappement_pollution}}</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="mb-0">
+              <strong>Identification</strong>
+             
+            </h5>
+
+            <hr />
+            <h5 class="text-muted mb-0">{{bilanid.identification}}</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card">
+          <div class="card-body">
+
+            <h5 class="mb-0">
+              <strong>Vision/Lighting/Buzzer</strong>                      
+            </h5>
+
+            <hr />
+            <h5 class="text-muted mb-0">{{bilanid.vision_eclairage_avertisseur_sonore}}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!-- ******************************************************************************************************-->
+
+    <div class="row">
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card">
+          <div class="card-body">
+            
+            <h5 class="mb-0">
+              <strong>Steering</strong>
+             
+            </h5>
+
+            <hr />
+
+            <h5 class="text-muted mb-0">{{bilanid.direction}}</h5>
+          </div>
+        </div>
+        
+      </div>
+
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card">
+          <div class="card-body">                   
+            <h5 class="mb-0">
+              <strong>Axle</strong>                      
+            </h5>
+
+            <hr />
+            <h5 class="text-muted mb-0">{{bilanid.train}}</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="mb-0">
+              <strong>Rims/Tyres</strong>
+             
+            </h5>
+
+            <hr />
+            <h5 class="text-muted mb-0">{{bilanid.jantes_pneus}}</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card">
+          <div class="card-body">
+
+            <h5 class="mb-0">
+              <strong>Fixations</strong>                      
+            </h5>
+
+            <hr />
+            <h5 class="text-muted mb-0">{{bilanid.fixation}}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card">
+          <div class="card-body">
+            
+            <h5 class="mb-0">
+              <strong>Braking</strong>
+             
+            </h5>
+
+            <hr />
+
+            <h5 class="text-muted mb-0">{{bilanid.freinage}}</h5>
+          </div>
+        </div>
+        <!-- Card -->
+      </div>
+
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card">
+          <div class="card-body">                   
+            <h5 class="mb-0">
+              <strong>suspension</strong>                      
+            </h5>
+
+            <hr />
+            <h5 class="text-muted mb-0">{{bilanid.suspension}}</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="mb-0">
+              <strong>Infrastructure</strong>
+             
+            </h5>
+
+            <hr />
+            <h5 class="text-muted mb-0">{{bilanid.infrastructure}}</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card">
+          <div class="card-body">
+
+            <h5 class="mb-0">
+              <strong>Body aspect</strong>                      
+            </h5>
+
+            <hr />
+            <h5 class="text-muted mb-0">{{bilanid.aspect_carrosserie}}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+<!-- ///////////////////// /////////////////////// -->
+
+    <div class="row">
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card">
+            <div class="card-body">
+              
+              <h5 class="mb-0">
+                <strong>Interior</strong>
+               
+              </h5>
+  
+              <hr />
+  
+              <h5 class="text-muted mb-0">{{bilanid.interieur}}</h5>
+            </div>
+          </div>
+          <!-- Card -->
+        </div>
+  
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card">
+            <div class="card-body">                   
+              <h5 class="mb-0">
+                <strong>AC/Heater</strong>                      
+              </h5>
+  
+              <hr />
+              <h5 class="text-muted mb-0">{{bilanid.clim_chauffage}}</h5>
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="mb-0">
+                <strong>Test Drive</strong>
+               
+              </h5>
+  
+              <hr />
+              <h5 class="text-muted mb-0">{{bilanid.essai_routier}}</h5>
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card">
+            <div class="card-body">
+  
+              <h5 class="mb-0">
+                <strong>Note</strong>                      
+              </h5>
+  
+              <hr />
+              <h5 class="text-muted mb-0">{{bilanid.commentaire}}</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+</section>
+
+{%endblock%}
